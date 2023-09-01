@@ -1,16 +1,18 @@
-x1 = 100;
-y1 = 100;
+x1 = -50;
+y1 = -50;
 
-x2 = 200;
-y2 = 100;
+x2 = 50;
+y2 = -50;
 
-x3 = 200;
-y3 = 200;
+x3 = 50;
+y3 = 50;
 
-x4 = 100;
-y4 = 200;
+x4 = -50;
+y4 = 50;
 
 let skalar = 0.1;
+
+let vektorFlyt = [100,100];
 
 function setup() 
 {
@@ -18,32 +20,24 @@ function setup()
   slider = createSlider(0, 5, 1, 0.1);
   slider.position(300, 10);
 
-  // x1 = x1 * skalar;
-  // x2 = x2 * skalar;
-  // x3 = x3 * skalar;
-  // x4 = x4 * skalar;
-
-  // y1 = y1 * skalar;
-  // y2 = y2 * skalar;
-  // y3 = y3 * skalar;
-  // y4 = y4 * skalar;
 }
 
 function draw() 
 {
   background(220);
 
-  // skalar = 1;
-
   skalar = slider.value();
 
-  point(x1 * skalar,y1 * skalar);
-  point(x2 * skalar,y2 * skalar);
-  point(x3 * skalar,y3 * skalar);
-  point(x4 * skalar,y4 * skalar);
+  point(x1 * skalar + vektorFlyt[0], y1 * skalar + vektorFlyt[1]);
+  point(x2 * skalar + vektorFlyt[0], y2 * skalar + vektorFlyt[1]);
+  point(x3 * skalar + vektorFlyt[0], y3 * skalar + vektorFlyt[1]);
+  point(x4 * skalar + vektorFlyt[0], y4 * skalar + vektorFlyt[1]);
 
-  line(x1 * skalar,y1 * skalar,x4 * skalar,y4 * skalar);
-  line(x4 * skalar,y4 * skalar,x3 * skalar,y3 * skalar);
-  line(x3 * skalar,y3 * skalar,x2 * skalar,y2 * skalar);
-  line(x1 * skalar,y1 * skalar,x2 * skalar,y2 * skalar);
+  line(x1 * skalar + vektorFlyt[0], y1 * skalar + vektorFlyt[1], x4 * skalar + vektorFlyt[0], y4 * skalar + vektorFlyt[1]);
+  line(x4 * skalar + vektorFlyt[0], y4 * skalar + vektorFlyt[1], x3 * skalar + vektorFlyt[0], y3 * skalar + vektorFlyt[1]);
+  line(x3 * skalar + vektorFlyt[0], y3 * skalar + vektorFlyt[1], x2 * skalar + vektorFlyt[0], y2 * skalar + vektorFlyt[1]);
+  line(x1 * skalar + vektorFlyt[0], y1 * skalar + vektorFlyt[1], x2 * skalar + vektorFlyt[0], y2 * skalar + vektorFlyt[1]);
+
+  
+
 }
